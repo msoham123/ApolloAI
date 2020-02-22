@@ -85,10 +85,11 @@ class _MainScreenState extends State<MainScreen>{
 
             Column(
               children: <Widget>[
-                Text("What is a disease?")
+                Text("What is a disease?"),
+                SizedBox(height: 50,),
+                Text("A disease is an abnormal condition of a part, organ, or system of an organism resulting from various causes, such as infection, inflammation, environmental factors, or genetic defect, and characterized by an identifiable group of signs, symptoms, or both."),
               ],
             ),
-
 
           ],
         ),
