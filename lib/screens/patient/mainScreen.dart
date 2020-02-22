@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:login_dash_animation/models/diseaseModel.dart';
 import 'package:login_dash_animation/widgets/cards.dart';
 
 
@@ -63,9 +64,11 @@ class _MainScreenState extends State<MainScreen>{
                 primary: false,
                 shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
-                itemCount: 4,
+                itemCount: DiseaseBase.diseaseList.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return diseaseCard();
+                  return diseaseCard(
+                    DiseaseBase.diseaseList[index]
+                  );
                 },
               ),
             ),
