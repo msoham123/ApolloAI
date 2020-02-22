@@ -1,6 +1,7 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
-import 'package:login_dash_animation/screens/homeScreen.dart';
+import 'package:login_dash_animation/screens/patient/homeScreen.dart';
+import 'package:login_dash_animation/screens/patient/navigation.dart';
 
 //Device Preview
 void main() => runApp(DevicePreview(builder: (context) => MyApp()));
@@ -8,7 +9,11 @@ void main() => runApp(DevicePreview(builder: (context) => MyApp()));
 //void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+
+  static int currentIndex = 0;
+
+
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,7 +25,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomeScreen(),
+      home: NavScreen(),
     );
   }
 }
