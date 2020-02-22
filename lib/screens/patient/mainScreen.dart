@@ -24,7 +24,7 @@ class _MainScreenState extends State<MainScreen>{
         padding: EdgeInsets.fromLTRB(10.0,0,10.0,0),
         child: ListView(
           children: <Widget>[
-            SizedBox(height: 1.0),
+            SizedBox(height: 10.0),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -82,6 +82,12 @@ class _MainScreenState extends State<MainScreen>{
 
 
             SizedBox(height: 30.0),
+
+            Column(
+              children: <Widget>[
+                Text("What is a disease?")
+              ],
+            ),
 
 
           ],

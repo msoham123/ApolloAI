@@ -2,6 +2,7 @@ import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:login_dash_animation/screens/mapScreen.dart';
+import 'package:login_dash_animation/screens/patient/chatBotScreen.dart';
 
 
 import '../../main.dart';
@@ -64,7 +65,7 @@ class _NavScreenState extends State<NavScreen> {
           children: <Widget>[
             MainScreen(),
             MapScreen(),
-            MainScreen(),
+            myChatBotScreen(),
             MainScreen(),
 
           ],
