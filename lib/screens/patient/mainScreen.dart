@@ -187,11 +187,7 @@ class _MainScreenState extends State<MainScreen>{
                 },
               ),
             ),
-
-
             SizedBox(height: 30.0),
-
-
           ],
         ),
       ),
