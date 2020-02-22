@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 
 class diseaseScreen extends StatefulWidget {
-  String title, medication, treatment, type, symptoms;
+  String title, medication, treatment, type, symptoms, description;
   Image diseaseImage;
 
   diseaseScreen({
@@ -13,6 +13,7 @@ class diseaseScreen extends StatefulWidget {
     @required this.symptoms,
     @required this.diseaseImage,
     @required this.title,
+    @required this.description
   });
 
   @override
@@ -23,13 +24,14 @@ class diseaseScreen extends StatefulWidget {
     type: type,
     symptoms: symptoms,
     title: title,
+    description : description,
   );
 }
 
 
 
 class _diseaseScreenState extends State<diseaseScreen> {
-  String title, medication, treatment, type, symptoms;
+  String title, medication, treatment, type, symptoms, description;
   Image diseaseImage;
 
   _diseaseScreenState({
@@ -39,6 +41,7 @@ class _diseaseScreenState extends State<diseaseScreen> {
     @required this.symptoms,
     @required this.diseaseImage,
     @required this.title,
+    @required this.description
   });
 
   @override

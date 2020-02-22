@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:login_dash_animation/models/diseaseModel.dart';
 import 'package:login_dash_animation/screens/patient/diseaseScreen.dart';
 
 
@@ -7,10 +8,20 @@ import '../main.dart';
 
 
 class diseaseCard extends StatelessWidget {
-  String title, medication, treatment, type, symptoms;
-  Image picture;
+  String title, medication, treatment, type, symptoms, description;
+  Image diseaseImage;
+  Disease disease;
 
-
+ diseaseCard(Disease disease){
+   this.disease = disease;
+   title = disease.title;
+   medication = disease.medication;
+   treatment = disease.treatment;
+   type = disease.type;
+   symptoms = disease.symptoms;
+   diseaseImage = disease.diseaseImage;
+   description = disease.description;
+ }
 
   @override
   Widget build(BuildContext context) {
@@ -33,12 +44,13 @@ class diseaseCard extends StatelessWidget {
     onTap: (){
       Navigator.push(context, MaterialPageRoute(builder: (context) =>
           diseaseScreen(
-            title: "Malaria",
-            treatment: "Use a mosquito net",
-            medication: "antimalaria",
-            symptoms: "Fever, cold, cough, etc.",
-            diseaseImage: Image.asset("assets/images/disease.jpg"),
-            type: "Viral",
+            title: title,
+            treatment: treatment,
+            medication: medication,
+            symptoms: symptoms,
+            diseaseImage: diseaseImage,
+            type: type,
+            description: description,
       )));
     },
       child: Container(
@@ -66,7 +78,7 @@ class diseaseCard extends StatelessWidget {
                     child: Image(
                       height: MediaQuery.of(context).size.height/ 3.25,
                       width: MediaQuery.of(context).size.width /1,
-                      image: AssetImage("assets/images/disease.jpg"),
+                      image: diseaseImage.image,
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -79,7 +91,7 @@ class diseaseCard extends StatelessWidget {
                         Row(
                           children: <Widget>[
                             Text(
-                              "Disease",
+                              title,
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
                                 color: Colors.white,
@@ -99,7 +111,7 @@ class diseaseCard extends StatelessWidget {
                             ),
                             SizedBox(width: 5.0),
                             Text(
-                              "Bacterial",
+                              type,
                               style: TextStyle(
                                 color: Colors.white,
                               ),
