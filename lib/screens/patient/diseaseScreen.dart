@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 
 class diseaseScreen extends StatefulWidget {
@@ -62,14 +63,14 @@ class _diseaseScreenState extends State<diseaseScreen> {
 //    }
 //  }
 
-//  void _launch(String link) async {
-//    String url = link;
-//    if (await canLaunch(url)) {
-//      await launch(url);
-//    } else {
-//      throw 'Could not launch $url';
-//    }
-//  }
+  void _launch(String link) async {
+    String url = link;
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
   
 
   Widget build(BuildContext context) {
@@ -105,7 +106,7 @@ class _diseaseScreenState extends State<diseaseScreen> {
                         },
                         child: Icon(
                           Icons.arrow_back_ios,
-                          color: Colors.black,
+                          color: Colors.white,
                         )),
                     Spacer(),
                   ],
@@ -174,13 +175,18 @@ class _diseaseScreenState extends State<diseaseScreen> {
                             MediaQuery.of(context).size.width / 10,
                             right: MediaQuery.of(context).size.width /
                                 10),
-                        child: Text(
-                          ("Medication : $medication"),
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.normal,
-                              fontSize: 15,
-                              fontFamily: 'OpenSans'),
+                        child: GestureDetector(
+                          onTap: (){
+                            _launch(medication);
+                          },
+                          child: Text(
+                            ("$medication"),
+                            style: TextStyle(
+                                color: Colors.blue,
+                                fontWeight: FontWeight.normal,
+                                fontSize: 15,
+                                fontFamily: 'OpenSans'),
+                          ),
                         ),
                       ),
 

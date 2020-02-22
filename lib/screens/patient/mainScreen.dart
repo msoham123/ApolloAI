@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:login_dash_animation/models/diseaseModel.dart';
 import 'package:login_dash_animation/widgets/cards.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 
 class MainScreen extends StatefulWidget {
@@ -11,6 +12,8 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen>{
   final TextEditingController _searchControl = new TextEditingController();
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +37,7 @@ class _MainScreenState extends State<MainScreen>{
 
                 FlatButton(
                   child: Text(
-                    "See all (43)",
+                    "(${DiseaseBase.diseaseList.length})",
                     style: TextStyle(
 //                      fontSize: 22,
 //                      fontWeight: FontWeight.w800,
@@ -80,7 +83,7 @@ class _MainScreenState extends State<MainScreen>{
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  "Category",
+                  "Clinics near me",
                   style: TextStyle(
                     fontSize: 23,
                     fontWeight: FontWeight.w800,

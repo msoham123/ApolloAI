@@ -26,6 +26,7 @@ dependencies:
   page_transition: ^1.1.4
   undraw:
   bottom_navy_bar:
+  url_launcher:
 
 
 dev_dependencies:
@@ -45,6 +46,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
+    - assets/diseases/
 
   # To add assets to your application, add an assets section, like this:
   # assets:

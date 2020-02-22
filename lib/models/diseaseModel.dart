@@ -21,10 +21,10 @@ class DiseaseBase{
         "Malaria",
         "Malaria is a serious disease caused by a parasite. You get it when an infected mosquito bites you. There are four different types of malaria caused by four related parasites.",
         "https://www.cdc.gov/malaria/travelers/drugs.html",
-        "Malaria can be prevented : When traveling to areas where malaria is found - See your doctor for medicines that protect youWear insect repellent with DEET - Cover up - Sleep under mosquito netting",
+        "Malaria can be prevented - When traveling to areas where malaria is found, see your doctor for medicines that protect you, wear insect repellent with DEET, cover up, and sleep under mosquito netting.",
         "Parasite",
         "Symptoms include chills, flu-like symptoms, fever, vomiting, diarrhea, and jaundice. A blood test can diagnose it. It can be life-threatening.",
-        Image.asset("assets/diseases/malaria.jpg"),
+        Image.asset("assets/diseases/malaria.jpg",fit: BoxFit.fill),
         ),
     Disease(
       "HIV/AIDS",
@@ -33,7 +33,7 @@ class DiseaseBase{
       "Strategies to reduce the risk of HIV infection include not having sex, limiting your number of sexual partners, never sharing needles, and using condoms the right way every time you have sex. People who are at high risk may take HIV prevention medicines.",
       "Virus",
       "The first signs of HIV infection may be swollen glands and flu-like symptoms. These may come and go within two to four weeks. Severe symptoms may not appear until months or years later.",
-      Image.asset("assets/diseases/HIV.jpg"),
+      Image.asset("assets/diseases/HIV.jpg",fit: BoxFit.fill),
     ),
     Disease(
       "Tuberculosis",
@@ -42,7 +42,7 @@ class DiseaseBase{
       "Malaria can be prevented : When traveling to areas where malaria is found - See your doctor for medicines that protect youWear insect repellent with DEET - Cover up - Sleep under mosquito netting",
       "Bacteria",
       "Symptoms of TB in the lungs may include : A bad cough that lasts 3 weeks or longer, weight loss, loss of appetite, coughing up blood or mucus, weakness or fatigue, fever, and night sweats.",
-      Image.asset("assets/diseases/tuberculosis.jpg"),
+      Image.asset("assets/diseases/tuberculosis.jpg",fit: BoxFit.fill),
     ),
     Disease(
       "Diarrhea",
@@ -51,7 +51,7 @@ class DiseaseBase{
       "Diarrhea is treated by replacing lost fluids and electrolytes to prevent dehydration. Depending on the cause of the problem, you may need medicines to stop the diarrhea or treat an infection.",
       "Multiple",
       "Symptoms of diarrhea include : Cramps or pain in the abdomen, an urgent need to use the bathroom, loss of bowel control, dehydration. If a virus or bacteria is the cause of your diarrhea, you may also have a fever, chills, and bloody stools.",
-      Image.asset("assets/diseases/DIAHHREA.png"),
+      Image.asset("assets/diseases/DIARRHEA.png",fit: BoxFit.fill),
     ),
   ];
 

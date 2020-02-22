@@ -67,7 +67,7 @@ class diseaseCard extends StatelessWidget {
                   BoxShadow(
                     color: Colors.black26,
                     offset: Offset(0.0, 2.0),
-                    blurRadius: 6.0,
+                    blurRadius: 10.0,
                   ),
                 ],
               ),
