@@ -83,33 +83,35 @@ class _MainScreenState extends State<MainScreen>{
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  "Clinics near me",
+                  "Find a Clinic Near Me",
                   style: TextStyle(
                     fontSize: 23,
                     fontWeight: FontWeight.w800,
                   ),
                 ),
+              ],
+            ),
 
-                FlatButton(
-                  child: Text(
-                    "See all (9)",
-                    style: TextStyle(
+            SizedBox(height: 10.0),
+
+            FlatButton(
+              child: Text(
+                "See all (9)",
+                style: TextStyle(
 //                      fontSize: 22,
 //                      fontWeight: FontWeight.w800,
-                      color: Theme.of(context).accentColor,
-                    ),
-                  ),
-                  onPressed: (){
-//                    Navigator.of(context).push(
-//                      MaterialPageRoute(
-//                        builder: (BuildContext context){
-//                          return DishesScreen();
-//                        },
-//                      ),
-//                    );
-                  },
+                  color: Theme.of(context).accentColor,
                 ),
-              ],
+              ),
+              onPressed: (){
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (BuildContext context){
+                          return MapScreen();
+                        },
+                      ),
+                    );
+              },
             ),
 
             SizedBox(height: 10.0),
