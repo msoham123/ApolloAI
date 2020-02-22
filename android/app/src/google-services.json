@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "282167852598",
+    "firebase_url": "https://apolloai-57de6.firebaseio.com",
+    "project_id": "apolloai-57de6",
+    "storage_bucket": "apolloai-57de6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:282167852598:android:c2c5691396af9c9485a297",
+        "android_client_info": {
+          "package_name": "ml.aryanvichare.apolloAi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "282167852598-12q114scbfl25vog9b1gs1jdgqajm5bd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDi9teS5n82n9gDzNn2tuED_ANcbQbGTZQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "282167852598-12q114scbfl25vog9b1gs1jdgqajm5bd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "282167852598-oci2ktoamq5meb95t6vljdo4idcc2t00.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "ml.aryanvichare.apolloAi"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
