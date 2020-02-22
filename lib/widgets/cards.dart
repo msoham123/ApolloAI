@@ -7,7 +7,7 @@ import '../main.dart';
 
 
 class diseaseCard extends StatelessWidget {
-  String title, description, date, location, state, url;
+  String title, medication, treatment, type, symptoms;
   Image picture;
 
 
@@ -32,15 +32,14 @@ class diseaseCard extends StatelessWidget {
 //      },
     onTap: (){
       Navigator.push(context, MaterialPageRoute(builder: (context) =>
-          diseaseScreen(eventName: "Disease",
-              eventDescription: "Bad disease",
-              eventDate: "k",
-              eventLocation: "k",
-              eventState: "k",
-              eventLink: "k",
-              eventImage: Image.asset("assets/images/disease.jpg"),
-              localOfficers: ["k"],
-              localOfficerPositions: ["k"])));
+          diseaseScreen(
+            title: "Malaria",
+            treatment: "Use a mosquito net",
+            medication: "antimalaria",
+            symptoms: "Fever, cold, cough, etc.",
+            diseaseImage: Image.asset("assets/images/disease.jpg"),
+            type: "Viral",
+      )));
     },
       child: Container(
         margin: EdgeInsets.all(10.0),

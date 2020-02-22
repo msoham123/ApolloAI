@@ -3,68 +3,42 @@ import 'package:flutter/material.dart';
 
 
 class diseaseScreen extends StatefulWidget {
-  String eventName,
-      eventDescription,
-      eventDate,
-      eventLocation,
-      eventState,
-      eventLink;
-  Image eventImage;
-  var localOfficers = [];
-  var localOfficerPositions = [];
+  String title, medication, treatment, type, symptoms;
+  Image diseaseImage;
 
   diseaseScreen({
-    @required this.eventName,
-    @required this.eventDescription,
-    @required this.eventDate,
-    @required this.eventLocation,
-    @required this.eventState,
-    @required this.eventLink,
-    @required this.eventImage,
-    @required this.localOfficers,
-    @required this.localOfficerPositions,
+    @required this.medication,
+    @required this.treatment,
+    @required this.type,
+    @required this.symptoms,
+    @required this.diseaseImage,
+    @required this.title,
   });
 
   @override
   _diseaseScreenState createState() => _diseaseScreenState(
-    eventDate: eventDate,
-    eventDescription: eventDescription,
-    eventImage: eventImage,
-    eventLink: eventLink,
-    eventName: eventName,
-    eventLocation: eventLocation,
-    eventState: eventState,
-    localOfficerPositions : localOfficerPositions,
-    localOfficers : localOfficers,
+    diseaseImage: diseaseImage,
+    medication: medication,
+    treatment: treatment,
+    type: type,
+    symptoms: symptoms,
+    title: title,
   );
 }
 
 
 
 class _diseaseScreenState extends State<diseaseScreen> {
-  String eventName,
-      eventDescription,
-      eventDate,
-      eventLocation,
-      eventState,
-      eventLink;
-  Image eventImage;
-  var localOfficers = [];
-  var localOfficerPositions = [];
+  String title, medication, treatment, type, symptoms;
+  Image diseaseImage;
 
-
-  String uid = '';
-  
   _diseaseScreenState({
-    @required this.eventName,
-    @required this.eventDescription,
-    @required this.eventDate,
-    @required this.eventLocation,
-    @required this.eventState,
-    @required this.eventLink,
-    @required this.eventImage,
-    @required this.localOfficers,
-    @required this.localOfficerPositions,
+    @required this.medication,
+    @required this.treatment,
+    @required this.type,
+    @required this.symptoms,
+    @required this.diseaseImage,
+    @required this.title,
   });
 
   @override
@@ -113,7 +87,7 @@ class _diseaseScreenState extends State<diseaseScreen> {
                 child: Container(
                     height: MediaQuery.of(context).size.height / 3,
                     width: MediaQuery.of(context).size.width,
-                    child: Image.asset("assets/images/doctorWorking.png")),
+                    child: diseaseImage),
               ),
               Padding(
                 padding: EdgeInsets.only(
@@ -160,7 +134,7 @@ class _diseaseScreenState extends State<diseaseScreen> {
                             left: MediaQuery.of(context).size.width /
                                 10),
                         child: Text(
-                          eventName,
+                          title,
                           style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.bold,
@@ -179,7 +153,7 @@ class _diseaseScreenState extends State<diseaseScreen> {
                             right: MediaQuery.of(context).size.width /
                                 10),
                         child: Text(
-                          eventDescription,
+                          ("Symptoms : $symptoms"),
                           style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.normal,
@@ -197,32 +171,19 @@ class _diseaseScreenState extends State<diseaseScreen> {
                             MediaQuery.of(context).size.width / 10,
                             right: MediaQuery.of(context).size.width /
                                 10),
-                        child: Row(
-                          mainAxisAlignment:
-                          MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            Text(
-                              "Date : ",
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 15,
-                                  fontFamily: 'OpenSans'),
-                            ),
-                            Text(
-                              eventDate,
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.normal,
-                                  fontSize: 15,
-                                  fontFamily: 'OpenSans'),
-                            ),
-                          ],
+                        child: Text(
+                          ("Medication : $medication"),
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 15,
+                              fontFamily: 'OpenSans'),
                         ),
                       ),
+
                       SizedBox(
                         height:
-                        MediaQuery.of(context).size.height / 100,
+                        MediaQuery.of(context).size.height / 25,
                       ),
                       Padding(
                         padding: EdgeInsets.only(
@@ -230,32 +191,18 @@ class _diseaseScreenState extends State<diseaseScreen> {
                             MediaQuery.of(context).size.width / 10,
                             right: MediaQuery.of(context).size.width /
                                 10),
-                        child: Row(
-                          mainAxisAlignment:
-                          MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            Text(
-                              "Location : ",
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 15,
-                                  fontFamily: 'OpenSans'),
-                            ),
-                            Text(
-                              eventLocation,
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.normal,
-                                  fontSize: 15,
-                                  fontFamily: 'OpenSans'),
-                            ),
-                          ],
+                        child: Text(
+                          ("Treatment : $treatment"),
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 15,
+                              fontFamily: 'OpenSans'),
                         ),
                       ),
                       SizedBox(
                         height:
-                        MediaQuery.of(context).size.height / 100,
+                        MediaQuery.of(context).size.height / 25,
                       ),
                       Padding(
                         padding: EdgeInsets.only(
@@ -263,63 +210,13 @@ class _diseaseScreenState extends State<diseaseScreen> {
                             MediaQuery.of(context).size.width / 10,
                             right: MediaQuery.of(context).size.width /
                                 10),
-                        child: Row(
-                          mainAxisAlignment:
-                          MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            Text(
-                              "State : ",
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 15,
-                                  fontFamily: 'OpenSans'),
-                            ),
-                            Text(
-                              eventState,
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.normal,
-                                  fontSize: 15,
-                                  fontFamily: 'OpenSans'),
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        height:
-                        MediaQuery.of(context).size.height / 100,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                            left:
-                            MediaQuery.of(context).size.width / 10,
-                            right: MediaQuery.of(context).size.width /
-                                10),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            Text(
-                              "Website : ",
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 15,
-                                  fontFamily: 'OpenSans'),
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                              },
-                              child: Text(
-                                "Link",
-                                style: TextStyle(
-                                    color: Colors.lightBlue,
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 15,
-                                    fontFamily: 'OpenSans'),
-                              ),
-                            ),
-                          ],
+                        child: Text(
+                          ("Type : $type"),
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 15,
+                              fontFamily: 'OpenSans'),
                         ),
                       ),
                       SizedBox(
@@ -329,48 +226,6 @@ class _diseaseScreenState extends State<diseaseScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
-                          GestureDetector(
-                            onTap: () {
-
-                            },
-                            child: Container(
-                              height:
-                              MediaQuery.of(context).size.height /
-                                  15,
-                              width:
-                              MediaQuery.of(context).size.width /
-                                  2.5,
-                              decoration: BoxDecoration(
-                                color: Colors.green,
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(20),
-                                ),
-                              ),
-                              alignment: Alignment.center,
-                              child: Row(
-                                mainAxisAlignment:
-                                MainAxisAlignment.center,
-                                children: <Widget>[
-                                  Padding(
-                                    padding:
-                                    const EdgeInsets.only(right: 5.0),
-                                    child: Icon(
-                                      Icons.launch,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                    Text(
-                                      'Sign Up',
-                                      style: TextStyle(
-                                        fontSize: 15.0,
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w800,
-                                      ),
-                                    ),
-                                ],
-                              ),
-                            ),
-                          ),
                           GestureDetector(
                             onTap: () {
 //                              Navigator.push(
@@ -387,7 +242,7 @@ class _diseaseScreenState extends State<diseaseScreen> {
                               MediaQuery.of(context).size.width /
                                   2.5,
                               decoration: BoxDecoration(
-                                color: Colors.blue,
+                                color: Colors.green,
                                 borderRadius:
                                 BorderRadius.all(Radius.circular(20)),
                               ),
@@ -404,7 +259,7 @@ class _diseaseScreenState extends State<diseaseScreen> {
                                     ),
                                   ),
                                   Text(
-                                    'View On Map',
+                                    'Find Clinic',
                                     style: TextStyle(
                                       fontSize: 15.0,
                                       color: Colors.white,
