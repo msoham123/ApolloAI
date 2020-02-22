@@ -3,25 +3,22 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:login_dash_animation/screens/patient/chatBotScreen.dart';
 
-//import 'package:login_dash_animation/screens/patient/searchScreen.dart';
-//import 'package:login_dash_animation/screens/mapScreen.dart';
+import 'package:login_dash_animation/screens/mapScreen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import '../../main.dart';
+import 'homeScreen.dart';
+import 'loginScreen.dart';
 import 'mainScreen.dart';
 
-
-
 class NavScreen extends StatefulWidget {
-
-
   @override
   _NavScreenState createState() => _NavScreenState();
 }
 
 class _NavScreenState extends State<NavScreen> {
   PageController pageController;
-
-
+  final _auth = FirebaseAuth.instance;
 
   @override
   initState() {
@@ -52,9 +49,32 @@ class _NavScreenState extends State<NavScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text("ApolloAI"),
-    backgroundColor: Colors.orange,
-    automaticallyImplyLeading: false,
-    ),
+        backgroundColor: Colors.orange,
+        automaticallyImplyLeading: false,
+        actions: <Widget>[
+          MaterialButton(
+            onPressed: () {
+              print("sign out");
+              _auth.signOut();
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => HomeScreen(),
+                ),
+              );
+            },
+            child: Row(
+              children: <Widget>[
+                Text("Sign out"),
+                Padding(
+                  padding: const EdgeInsets.only(left: 5.0),
+                  child: Icon(Icons.keyboard_arrow_right),
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
       body: Center(
         child: PageView(
           controller: pageController,
@@ -65,8 +85,8 @@ class _NavScreenState extends State<NavScreen> {
           },
           children: <Widget>[
             MainScreen(),
+            MapScreen(),
             myChatBotScreen(),
-//           MapScreen(),
             MainScreen(),
           ],
         ),
