@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:login_dash_animation/components/buttonLoginAnimation.dart';
 import 'package:login_dash_animation/components/customTextfield.dart';
 import 'package:login_dash_animation/screens/dashScreen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:bottom_navy_bar/bottom_navy_bar.dart';
+import 'navigation.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -9,6 +12,9 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final _auth = FirebaseAuth.instance;
+  String email = '', password = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,27 +78,103 @@ class _LoginScreenState extends State<LoginScreen> {
                           fontSize: 25
                         )),
                         SizedBox(height: 40),
-                        CustomTextField(
-                          label: "Email",
+                        TextField(
+                          onChanged: (value) {
+                            email = value;
+                            print(email);
+                          },
+                          style: TextStyle(
+                              color: Color(0xFFF234253),
+                              fontWeight: FontWeight.bold),
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            focusedBorder: OutlineInputBorder(
+                                borderSide:
+                                BorderSide(color: Colors.grey, width: 1.0)),
+                            enabledBorder: OutlineInputBorder(
+                                borderSide:
+                                BorderSide(color: Colors.grey, width: 1.0)),
+                            labelText: "Email",
+                            labelStyle: TextStyle(
+                                color: Color(0xFFF234253),
+                                fontWeight: FontWeight.bold),
+                            suffixIcon: Icon(
+                              Icons.email,
+                              size: 27,
+                              color: Color(0xFFF032f41),
+                            ),
+                          ),
                         ),
                         SizedBox(height: 10),
-                        CustomTextField(
-                          label: "Password",
-                          isPassword: true,
-                          icon: Icon(Icons.https, size: 27,color: Color(0xFFF032f41),),
+                        TextField(
+                          onChanged: (value) {
+                            password = value;
+                            print(password);
+                          },
+                          style: TextStyle(
+                              color: Color(0xFFF234253),
+                              fontWeight: FontWeight.bold),
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            focusedBorder: OutlineInputBorder(
+                                borderSide:
+                                BorderSide(color: Colors.grey, width: 1.0)),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.grey,
+                                width: 1.0,
+                              ),
+                            ),
+                            labelText: "Password",
+                            labelStyle: TextStyle(
+                              color: Color(0xFFF234253),
+                              fontWeight: FontWeight.bold,
+                            ),
+                            suffixIcon: Icon(
+                              Icons.https,
+                              size: 27,
+                              color: Color(0xFFF032f41),
+                            ),
+                          ),
                         ),
                         SizedBox(height: 40),
-                        ButtonLoginAnimation(
-                          label: "Login",
-                          fontColor: Colors.white,
-                          background: Color(0xFFF1f94aa),
-                          borderColor: Color(0xFFF1a7a8c),
-                          child: DashScreen(),
+                        Center(
+                          child: MaterialButton(
+                            onPressed: () async {
+                              try {
+                                final result =
+                                await _auth.signInWithEmailAndPassword(
+                                    email: email,
+                                    password: password);
+                                FirebaseUser user = result.user;
+
+                                if (result != null) {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => NavScreen(),
+                                    ),
+                                  );
+                                } else {
+                                  print(result);
+                                }
+                              } catch (e) {
+                                print(e);
+                              }
+                            },
+                            child: Text(
+                              "Sign up",
+                              style:
+                              TextStyle(color: Colors.white, fontSize: 20),
+                            ),
+                            color: Colors.blue,
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 30, vertical: 20),
+                          ),
                         )
                       ],
                     ),
                   )
-
                 ],
               ),
             ),
