@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:login_dash_animation/animations/fadeAnimation.dart';
 import 'package:login_dash_animation/widgets/headerWidget.dart';
-import 'package:login_dash_animation/widgets/popularBeaches.dart';
 import 'package:login_dash_animation/widgets/searchWidget.dart';
-import 'package:login_dash_animation/widgets/videoWidget.dart';
 
 class DashScreen extends StatefulWidget {
   @override
@@ -23,9 +21,9 @@ class _DashScreenState extends State<DashScreen> {
             SizedBox(height: 20),
             FadeAnimation(1.6,SearchWidget()),
             SizedBox(height: 20),
-            FadeAnimation(1.8,PopularBeaches()),
+            FadeAnimation(1.8,SearchWidget()),
             SizedBox(height: 20),
-            FadeAnimation(2,VideoWidget())
+            FadeAnimation(2,SearchWidget())
           ],
         ),
       ),
