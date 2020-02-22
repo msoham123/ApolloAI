@@ -1,7 +1,9 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:login_dash_animation/screens/mapScreen.dart';
 import 'package:login_dash_animation/screens/patient/chatBotScreen.dart';
+import 'package:login_dash_animation/screens/settingsScreen.dart';
 
 import 'package:login_dash_animation/screens/mapScreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -87,7 +89,6 @@ class _NavScreenState extends State<NavScreen> {
             MainScreen(),
             MapScreen(),
             myChatBotScreen(),
-            MainScreen(),
           ],
         ),
       ),
@@ -122,12 +123,6 @@ class _NavScreenState extends State<NavScreen> {
             icon: Icon(Icons.question_answer),
             title: Text('Chatbot'),
             activeColor: Colors.orangeAccent,
-            textAlign: TextAlign.center,
-          ),
-          BottomNavyBarItem(
-            icon: Icon(Icons.settings),
-            title: Text('Settings'),
-            activeColor: Colors.black,
             textAlign: TextAlign.center,
           ),
         ],

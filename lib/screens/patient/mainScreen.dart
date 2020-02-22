@@ -1,7 +1,11 @@
+
 import 'package:flutter/material.dart';
 import 'package:login_dash_animation/models/diseaseModel.dart';
 import 'package:login_dash_animation/widgets/cards.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import '../mapScreen.dart';
+
 
 class MainScreen extends StatefulWidget {
   @override
@@ -11,6 +15,8 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen>{
   final TextEditingController _searchControl = new TextEditingController();
 
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +24,7 @@ class _MainScreenState extends State<MainScreen>{
         padding: EdgeInsets.fromLTRB(10.0,0,10.0,0),
         child: ListView(
           children: <Widget>[
-            SizedBox(height: 1.0),
+            SizedBox(height: 10.0),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -71,7 +77,20 @@ class _MainScreenState extends State<MainScreen>{
                 },
               ),
             ),
+
+
+
+
             SizedBox(height: 30.0),
+
+            Column(
+              children: <Widget>[
+                Text("What is a disease?"),
+                SizedBox(height: 50,),
+                Text("A disease is an abnormal condition of a part, organ, or system of an organism resulting from various causes, such as infection, inflammation, environmental factors, or genetic defect, and characterized by an identifiable group of signs, symptoms, or both."),
+              ],
+            ),
+
           ],
         ),
       ),
