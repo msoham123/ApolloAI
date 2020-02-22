@@ -14,7 +14,7 @@ description: A new Flutter project.
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.2.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -27,6 +27,10 @@ dependencies:
   undraw:
   bottom_navy_bar:
   url_launcher:
+  geolocator:
+  webview_flutter:
+  google_maps_flutter:
+
 
 
 dev_dependencies:
