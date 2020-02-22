@@ -26,7 +26,7 @@ class myChatBotState extends State<myChatBotScreen> {
   @override
   void initState() {
     super.initState();
-//    getCurrentUser();
+    getCurrentUser();
 //    _populateCurrentUser(loggedInUser);
     _messages.add(
         ChatMessage(
@@ -37,16 +37,16 @@ class myChatBotState extends State<myChatBotScreen> {
     );
   }
 
-//  void getCurrentUser() async {
-//    try {
-//      final user = await _auth.currentUser();
-//      if (user != null) {
-//        loggedInUser = user;
-//      }
-//    } catch (e) {
-//      print(e);
-//    }
-//  }
+  void getCurrentUser() async {
+    try {
+      final user = await _auth.currentUser();
+      if (user != null) {
+        loggedInUser = user;
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
 
 //  void _populateCurrentUser(FirebaseUser user) async {
 //    final FirebaseUser user = await _auth.currentUser();
@@ -114,7 +114,7 @@ class myChatBotState extends State<myChatBotScreen> {
     _textController.clear();
     ChatMessage message =  ChatMessage(
       text: text,
-      name: name,
+      name: loggedInUser.email,
       type: true,
     );
     setState(() {
