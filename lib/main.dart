@@ -3,29 +3,32 @@ import 'package:flutter/material.dart';
 import 'package:login_dash_animation/screens/patient/homeScreen.dart';
 import 'package:login_dash_animation/screens/patient/navigation.dart';
 
-//Device Preview
-void main() => runApp(DevicePreview(builder: (context) => MyApp()));
+import 'screens/patient/homeScreen.dart';
 
-//void main() => runApp(MyApp());
+//Device Preview
+//void main() => runApp(DevicePreview(builder: (context) => MyApp()));
+
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
 
   static int currentIndex = 0;
-
+  static String email = '';
+  static String password = '';
 
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      locale: DevicePreview.of(context).locale,
-      builder: DevicePreview.appBuilder,
+//      locale: DevicePreview.of(context).locale,
+//      builder: DevicePreview.appBuilder,
       //activate for device preview
       debugShowCheckedModeBanner: false,
       title: 'Surfing',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: NavScreen(),
+      home: HomeScreen(),
     );
   }
 }

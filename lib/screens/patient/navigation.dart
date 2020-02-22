@@ -2,7 +2,9 @@ import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:login_dash_animation/screens/patient/chatBotScreen.dart';
-import 'package:login_dash_animation/screens/patient/searchScreen.dart';
+
+//import 'package:login_dash_animation/screens/patient/searchScreen.dart';
+//import 'package:login_dash_animation/screens/mapScreen.dart';
 
 import '../../main.dart';
 import 'mainScreen.dart';
@@ -48,6 +50,11 @@ class _NavScreenState extends State<NavScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("ApolloAI"),
+    backgroundColor: Colors.orange,
+    automaticallyImplyLeading: false,
+    ),
       body: Center(
         child: PageView(
           controller: pageController,
@@ -58,10 +65,9 @@ class _NavScreenState extends State<NavScreen> {
           },
           children: <Widget>[
             MainScreen(),
-            SearchScreen(),
             myChatBotScreen(),
+//           MapScreen(),
             MainScreen(),
-
           ],
         ),
       ),
@@ -85,11 +91,11 @@ class _NavScreenState extends State<NavScreen> {
             textAlign: TextAlign.center,
           ),
           BottomNavyBarItem(
-            icon: Icon(Icons.search),
+            icon: Icon(Icons.location_on),
             title: Text(
-              'Search',
+              'Clinics',
             ),
-            activeColor: Colors.green,
+            activeColor: Colors.pink,
             textAlign: TextAlign.center,
           ),
           BottomNavyBarItem(
