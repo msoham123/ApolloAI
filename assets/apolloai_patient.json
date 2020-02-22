@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "apolloai-269018",
+  "private_key_id": "5c39cc4b0bbebdcac708e2ba75b6dbeae51cc1c1",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEugIBADANBgkqhkiG9w0BAQEFAASCBKQwggSgAgEAAoIBAQCL5GvOvdCsb5Ph\nn1idxMsJdph80DjYC4lN1v3VJkwHd4INisACSdcUDf/xLqkUvS+UcCyalA2tOfvt\n0zJevvelqaSD0Ojmyea1KKX0RuRna+jmqaw/R0UDmj/knV/QT63vAMBr/rp9ThHD\n/nLp7tLjbW3Wq90vTv23p4EBRGxxzdORFyOjSSHJt/SxKXBNPABbZ/5s1iYgL+C3\nUTjHihdKfjMn1BpfVt8ZZzgkF8XL834PsAt0HHJDfQM+qB+otu0Iun+Dhpcvnfdd\nvOwi63QVYeESX2ju6a9/niYrev5BRajtxO2g/zRPEmOZN6QrSRMY5s3DP7dzMtcv\nelglUgD3AgMBAAECgf8R4SJGVWROX8L2SWFgXXx2iZt4IzO0DckjzeCidrEbo7o5\nFsfBD3q5yAwWWbFCjVMIKcDUvFjHdcUwZRpUMM6vb26hq5rX/31Vgutmizvl6Vlq\nrLXHgjs3KPAvxd9xpGptGirKt7vw3/zs/McUmbjvp6VJ9+EYBB1xUOhnwUroIUVq\nwZ14wPUUqrgIJZuk+NM8iaNerdPqM8rSGSjM2eygwh1+KllDY75JzOsFAxV6thGM\nmez/IduMp4RSNuJB9F6wGirlzorMXrQuSfPJ4HA7E/gPAM93MUxW//Tc4+WkUTpZ\ng1BFzfMQYz/nTuIu0l1yktG4hLfmfJysbGAgO4kCgYEAv0Rlb3v4XbCmkNAgSBR9\n9MoQjO9RmxL7VdH6dmmr/M4yaAJEQnMZLNB5jiXjLj2szNuKoxfF+3qEcu5R0iwM\nFROMayq2katPMngzijo0Acg5Z0p1kZto42TBZ6OaEYpwCHTqm7oGPHt24FS42qg/\naZpsUWcKeMToWWj7Sl2SC/0CgYEAuzzYZtKGqFHoRldyeOEEw6JTsVHgs1q52Sf6\n8zs5cdw2Y0T/8itXje1E77kIszT7qTHXV1OleY+B/D8zPIaRd/34fAcJ0ZwY1Oj/\n9DUo79Qgg462Rx/VD9aTDdiSpxuu06zue/fn8Cl4reyEg8kCjaJ1uB99wV5cFoXq\nuaylYQMCgYB2zgFD0nlfmM6dvOmQXEowtyK4qB7EeHHtyNQOoWzXRy1ANcg4jk3g\n7E3U4evPWTfwt53R2H59yohi622fYwTOQqpCFvH4YbR74PYCskyDnt8pLbMBkssA\nFCGeQpz8sEUOu7DOsioVf4tDpNx91WwuKGGH3r0+bvD0OKV+d8iz8QKBgGFGOycw\nOMU5yHLC+7XRMahxrQlygEqt19/55WZ4Xl/JCHiKYG5wFgymOCpS9zIjVJuSSU4V\nJuMAq4dhTj0jrG+qgm3tOiyr7Dqw0kkNVTdD/aBbhFdvMkIIOF35JjerKijOrxe4\ns8cRxKCXQEE3LRxoSsBdm/faDf2llUzhZQoBAoGAQCTfgARTl5HBUoZRv30I7fdb\nxMZXbe5t3HgNbSim5A63MqBoexTfZTEZtlnRWbdkZ/ne0Z3l1o6FyLd+ed1CBsAh\nMHxPMU/uAvJtwEYQEmW3xrz0qVWzjWcEHaCyYe585PXjzvGRT/Cusrn0veKNWWvE\n+xmXrjWbW3cy26SUxXg=\n-----END PRIVATE KEY-----\n",
+  "client_email": "apolloai-bot@apolloai-269018.iam.gserviceaccount.com",
+  "client_id": "113769383935468944223",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/apolloai-bot%40apolloai-269018.iam.gserviceaccount.com"
+}

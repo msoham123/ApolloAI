@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_dialogflow/dialogflow_v2.dart';
 
-
-
-//FirebaseUser loggedInUser;
-//String name = '';
-//final _firestore = Firestore.instance;
-//final _auth = FirebaseAuth.instance;
+FirebaseUser loggedInUser;
+String name = 'John Smith';
+final _firestore = Firestore.instance;
+final _auth = FirebaseAuth.instance;
 
 class myChatBotScreen extends StatefulWidget {
   myChatBotScreen({Key key, this.title}) : super(key: key);
@@ -27,13 +28,13 @@ class myChatBotState extends State<myChatBotScreen> {
     super.initState();
 //    getCurrentUser();
 //    _populateCurrentUser(loggedInUser);
-//    _messages.add(
-//        ChatMessage(
-//            text: "Hi, how can I assist you today?",
-//            name: "FBLA Bot",
-//            type: false
-//        )
-//    );
+    _messages.add(
+        ChatMessage(
+            text: "Hi, how can I assist you today?",
+            name: "Apollo",
+            type: false
+        )
+    );
   }
 
 //  void getCurrentUser() async {
@@ -62,7 +63,7 @@ class myChatBotState extends State<myChatBotScreen> {
         data:  IconThemeData(color: Colors.black),
         child:  Container(
           color: Colors.white,
-          margin: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 15.0),
+          margin: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 5.0),
           child:  Row(
             children: <Widget>[
               Flexible(
@@ -88,43 +89,42 @@ class myChatBotState extends State<myChatBotScreen> {
 
       );
     }
+
+  void Response(query) async {
+    _textController.clear();
+    AuthGoogle authGoogle =
+    await AuthGoogle(fileJson: "assets/apolloai_patient.json")
+        .build();
+    Dialogflow dialogflow =
+    Dialogflow(authGoogle: authGoogle, language: Language.english);
+    AIResponse response = await dialogflow.detectIntent(query);
+    ChatMessage message =  ChatMessage(
+      text: response.getMessage() ??
+          CardDialogflow(response.getListMessage()[0]).title,
+      name: "Apollo",
+      type: false,
+    );
+    setState(() {
+      _messages.insert(0, message);
+    });
+
   }
 
-//  void Response(query) async {
-//    _textController.clear();
-//    AuthGoogle authGoogle =
-//    await AuthGoogle(fileJson: "assets/fbla_bot_creds.json")
-//        .build();
-//    Dialogflow dialogflow =
-//    Dialogflow(authGoogle: authGoogle, language: Language.english);
-//    AIResponse response = await dialogflow.detectIntent(query);
-//    ChatMessage message =  ChatMessage(
-//      text: response.getMessage() ??
-//          CardDialogflow(response.getListMessage()[0]).title,
-//      name: "FBLA Bot",
-//      type: false,
-//    );
-//    setState(() {
-//      _messages.insert(0, message);
-//    });
-//
-//  }
-
-//  void _handleSubmitted(String text) {
-//    _textController.clear();
-//    ChatMessage message =  ChatMessage(
-//      text: text,
-//      name: name,
-//      type: true,
-//    );
-//    setState(() {
-//      if (message != null) {
-//        _messages.insert(0, message);
-//      }
-//    });
-//    print("test = " + text);
-//    Response(text);
-//  }
+  void _handleSubmitted(String text) {
+    _textController.clear();
+    ChatMessage message =  ChatMessage(
+      text: text,
+      name: name,
+      type: true,
+    );
+    setState(() {
+      if (message != null) {
+        _messages.insert(0, message);
+      }
+    });
+    print("test = " + text);
+    Response(text);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -133,8 +133,8 @@ class myChatBotState extends State<myChatBotScreen> {
       appBar:  AppBar(
         iconTheme: IconThemeData(color: Colors.black),
         centerTitle: true,
-        title:  Text("FBLA Chatbot", style: TextStyle(color: Colors.black)),
-        backgroundColor: MyApp.appBarColor,
+        title:  Text("Apollo: Smart Disease Assistant", style: TextStyle(color: Colors.white)),
+        backgroundColor: Colors.blue,
       ),
       body:  Column(children: <Widget>[
         Flexible(
