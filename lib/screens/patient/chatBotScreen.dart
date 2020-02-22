@@ -130,12 +130,6 @@ class myChatBotState extends State<myChatBotScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar:  AppBar(
-        iconTheme: IconThemeData(color: Colors.black),
-        centerTitle: true,
-        title:  Text("Apollo: Smart Disease Assistant", style: TextStyle(color: Colors.white)),
-        backgroundColor: Colors.blue,
-      ),
       body:  Column(children: <Widget>[
         Flexible(
           child:  ListView.builder(
