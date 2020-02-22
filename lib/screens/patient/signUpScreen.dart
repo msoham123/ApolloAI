@@ -3,7 +3,7 @@ import 'package:login_dash_animation/components/buttonLoginAnimation.dart';
 import 'package:login_dash_animation/components/customTextfield.dart';
 import 'package:login_dash_animation/screens/dashScreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:login_dash_animation/screens/patient/mainScreen.dart';
+import 'package:login_dash_animation/screens/mainScreen.dart';
 import 'package:login_dash_animation/screens/patient/navigation.dart';
 
 class SignUpScreen extends StatefulWidget {

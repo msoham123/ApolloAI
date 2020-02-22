@@ -11,7 +11,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import '../../main.dart';
 import 'homeScreen.dart';
 import 'loginScreen.dart';
-import 'mainScreen.dart';
+import '../mainScreen.dart';
 
 class NavScreen extends StatefulWidget {
   @override

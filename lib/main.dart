@@ -1,5 +1,6 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+import 'package:login_dash_animation/screens/doctor/navigationDoctor.dart';
 import 'package:login_dash_animation/screens/patient/homeScreen.dart';
 import 'package:login_dash_animation/screens/patient/navigation.dart';
 
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomeScreen(),
+      home: NavScreenDoctor(),
     );
   }
 }

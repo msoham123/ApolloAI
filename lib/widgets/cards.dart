@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:login_dash_animation/models/diseaseModel.dart';
-import 'package:login_dash_animation/screens/patient/diseaseScreen.dart';
+import 'package:login_dash_animation/screens/diseaseScreen.dart';
 
 
 import '../main.dart';
