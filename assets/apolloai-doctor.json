@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "apolloai-doctor-269019",
+  "private_key_id": "9c3ff870171c4b8af3b396608c0c1d6ea1c29836",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCyoPAYk2CJ/5MX\nUyA6SwP8or7wX6l8E3R4CbH9JSqc/IZ4U7C1WH3Y8OYbG0Bhv0bd3T29ntLNKZpK\nbect7XRPHBS6YFuJ4V01/GOrT09MsPuvZr+odWmgFR7x5LakK82L6CVf5RSexEnc\nV7IofcsrK/x8Ver2/TvNDcAZsAVL4GfxSUwVqP9NeM2kYHLlS3hlCkMgsr0TV57E\nj+ym/m6r6hFhZ9q5IexmPTEaQtsHRYPiQYizZqE0L2Ojz6V5PUUktIEmALEVWNMZ\nIApoAB0Brcn0Q3duerh2LkjfA1/6rKoSG9XDdNC9uBvvleuCj2pv3phFgfLZk3Af\n22TT+cyTAgMBAAECggEAByUr5XfDtVFtU1IGaH6GrszdwWS6NVXb409T+NHLRhNN\n17NVTrO2+P4N3ki1RxOtJIPMi/C18vH2k4KY7Dvi2qU/aQMgtj+3CElLvVcDT4iG\n0MnV4cmsi3Q81CU3bxK3eqCzGgZiUEV+xNsXK8p4XYY5Z8nSB8YyZa3moMBrPdEv\niKoYxJKXUzWIaZ5YjA3NP3gebaZiUHBJ5qglB7unaxTj193gYE3AfbnmaMqIVx9n\nUKyOXTenxKV7PAKYwmx0YdI+qg4KpEMySyjNpbM1w9qREVGfYlw/pqB0dpJZ/qMr\n8neqIDE4879RjZpOA/hTdPVHYIJz0RyEQn/O8CAcYQKBgQDd0UibGnm1xVFT7icj\nfdZxEGoAhqUlUE289InClt8bgxmoezCsbbEnTlVIejq1uc8XsUAfxDG4txM21Qm6\nEk6OIpmJBVh/CAccAuTNwAIHTV5c2S9QeSk9UvXiKTujLm5jRG3NcbJQqdzBOscO\nTdhpwgKjbkN/ug7A19fQOXAUIQKBgQDOJ9nhZqqu3g4GUZ1wLUUmEKv9GD2LYItj\nECElurS4gFSwgODIOoiqlRvlbsVi6DhrHBJAYZtAQA1LX85KnN2L9vXctNOuYn1D\nbgNM0VBpGDoMMgJC/JSd9qGEWHDqpcBX7ZoNm07dJRD8YVPn+EhRp8gZlFGbWbAB\nv6ItPkyKMwKBgQDSjbMuz43Sdi+BzOFH9k4U2vDT+PtQFQ8FmtYdaNr1IZe8bttA\nAYuUdO3NM4EBORQUOENXJAPSg61wcf6eqnv4vW0iPHnJc1RUSYboqycByXYWCm64\nI5p6xIH0IRGkDxHnlm/oANGzcdnDbci/kjMoCGo6uhLGblVMxlXsKGl0IQKBgAwN\nClCBxuJ3+ovmA3UGQG+MM/GUlCxslVlSHQ3ujxfl8I1syzcJLOoD02CjDAjPGFUy\ni+KVkhS8acqJLC7yYoUHB7JCI8mi2j2x1aGM7s1l7CbAWZ9+0lU1kJWC8f7Vd5vs\nOMAo3wBQZWDLc7MwsVGMpEbSg764DHDdueY5KRI/AoGAe7UUZYw0LQL956xle33E\ngsabprsKzLS4rP9cUpdE656NwP6vuJHH7TEtoWoAm4tGNI1hb0O55BRBsuAbnXlr\nXrorHQdEZpdNf1SoVTlETHCTznpxfyEDijct+oQCdzat1wD3sIsGqVx6ygIro44p\nxdOnjD486NnfWjx+JXLY8o0=\n-----END PRIVATE KEY-----\n",
+  "client_email": "apollo-ai-doctor@apolloai-doctor-269019.iam.gserviceaccount.com",
+  "client_id": "106011911690068859623",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/apollo-ai-doctor%40apolloai-doctor-269019.iam.gserviceaccount.com"
+}

@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
+//import 'package:login_dash_animation/screens/patient/mainScreen.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
+import '../main.dart';
+import '../screens/patient/loginScreen.dart';
+import '../screens/patient/loginScreen.dart';
 
 class ButtonLoginAnimation extends StatefulWidget {
 
@@ -19,6 +25,7 @@ class ButtonLoginAnimation extends StatefulWidget {
 class _ButtonLoginAnimationState extends State<ButtonLoginAnimation>
 with TickerProviderStateMixin {
 
+  final _auth = FirebaseAuth.instance;
   AnimationController _positionController;
   Animation<double> _positionAnimation;
 
@@ -57,7 +64,7 @@ with TickerProviderStateMixin {
       if(status == AnimationStatus.completed){
         Navigator.pushReplacement(context, PageTransition(
           type: PageTransitionType.fade,
-          child: widget.child
+          child: LoginScreen()
         ));
       }
     });
@@ -67,11 +74,33 @@ with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-        onTap: (){
+        onTap: () async {
           setState(() {
            _isLogin = true; 
           });
           _positionController.forward();
+
+          try {
+            final result =
+                await _auth.createUserWithEmailAndPassword(
+                email: MyApp.email, password: MyApp.password);
+            FirebaseUser user = result.user;
+
+            if (result != null) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) =>
+                      LoginScreen(),
+                ),
+              );
+            } else {
+              print(result);
+            }
+          } catch (e) {
+            print(e);
+          }
+
         },
         child: Container(
           height: 63,

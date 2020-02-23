@@ -15,16 +15,13 @@ import '../main.dart';
 
 class MapScreen extends StatefulWidget {
   @override
-  MapState createState() =>
-      MapState();
+  MapState createState() => MapState();
 }
 
 class MapState extends State<MapScreen> {
   PageController _pageController;
-  LatLng SOURCE = LatLng(0,0);
+  LatLng SOURCE = LatLng(0, 0);
   Completer<WebViewController> _controller = Completer<WebViewController>();
-
-
 
   @override
   void initState() {
@@ -33,14 +30,13 @@ class MapState extends State<MapScreen> {
     _getSource();
   }
 
-
   Future<void> _getSource() async {
     var currentLocation = await Geolocator()
         .getCurrentPosition(desiredAccuracy: LocationAccuracy.best);
-    LatLng myLocation = LatLng(currentLocation.latitude, currentLocation.longitude);
+    LatLng myLocation =
+        LatLng(currentLocation.latitude, currentLocation.longitude);
     print('mylocation = ${myLocation.latitude}, ${myLocation.longitude}');
     SOURCE = myLocation;
-
   }
 
   @override
@@ -54,20 +50,32 @@ class MapState extends State<MapScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: WebView(
+      body: FutureBuilder(
+        future: _getSource(),
+        builder: (context, snapshot) {
+          if(snapshot.connectionState == ConnectionState.done) {
+            return WebView(
               javascriptMode: JavascriptMode.unrestricted,
 //              initialUrl: "https://www.google.com/maps/search/+clinics+near+me/@${SOURCE.latitude},${SOURCE.longitude},13.44z",
-              initialUrl: "https://www.google.com/maps/search/+clinics+near+me/@37.3921529,-122.0483755,13.44z",
+              initialUrl:
+              "https://www.google.com/maps/search/+clinics+near+me/@37.3921529,-122.0483755,13.44z",
               gestureNavigationEnabled: true,
               gestureRecognizers: <Factory<OneSequenceGestureRecognizer>>{
                 Factory<VerticalDragGestureRecognizer>(
-                      () => VerticalDragGestureRecognizer()..onUpdate = (_) {},
+                      () =>
+                  VerticalDragGestureRecognizer()
+                    ..onUpdate = (_) {},
                 ),
               },
               onWebViewCreated: (WebViewController webViewController) {
                 _controller.complete(webViewController);
               },
-            ),
+            );
+          } else {
+            return Center(child: CircularProgressIndicator());
+          }
+        },
+      ),
 //      body: Stack(
 //        children: <Widget>[
 //          Row(

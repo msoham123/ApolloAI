@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:login_dash_animation/screens/mapScreen.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:login_dash_animation/main.dart';
+import 'package:login_dash_animation/screens/patient/navigation.dart';
 
 
 class diseaseScreen extends StatefulWidget {
@@ -237,11 +240,13 @@ class _diseaseScreenState extends State<diseaseScreen> {
                         children: <Widget>[
                           GestureDetector(
                             onTap: () {
-//                              Navigator.push(
-//                                  context,
-//                                  MaterialPageRoute(
-//                                      builder: (context) => myMapScreen(DEST: DEST,title: eventName, startLat: 37.368832, startLong: -122.036346))
-//                              );
+                              MyApp.currentIndex = 1;
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        NavScreen(),
+                                  ));
                             },
                             child: Container(
                               height:
