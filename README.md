@@ -10,7 +10,7 @@ Doctors, however, can access additional features that we have developed just for
 # How to Run 
 
 0. Get dependencies from the `pubspec.yaml`
-1. Run `main.dart`
+1. Open `main.dart`
 2. Run `open -a Simulator`
 3. Run `flutter run`
 
