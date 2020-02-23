@@ -5,6 +5,7 @@ import 'package:login_dash_animation/screens/patient/homeScreen.dart';
 import 'package:login_dash_animation/screens/patient/navigation.dart';
 
 import 'screens/patient/homeScreen.dart';
+import 'screens/patient/homeScreen.dart';
 
 //Device Preview
 //void main() => runApp(DevicePreview(builder: (context) => MyApp()));
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: NavScreenDoctor(),
+      home: HomeScreen(),
     );
   }
 }

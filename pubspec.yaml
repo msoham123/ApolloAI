@@ -34,6 +34,8 @@ dependencies:
   geolocator:
   webview_flutter:
   google_maps_flutter:
+  tflite: ^1.0.4
+  image_picker: ^0.6.2+3
 
 
 dev_dependencies:
@@ -55,6 +57,9 @@ flutter:
     - assets/images/
     - assets/
     - assets/diseases/
+    - assets/apolloai-doctor.json
+    - assets/labels.txt
+    - assets/lungnet.tflite
 
   # To add assets to your application, add an assets section, like this:
   # assets:

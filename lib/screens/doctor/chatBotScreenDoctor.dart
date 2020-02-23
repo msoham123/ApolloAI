@@ -4,7 +4,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_dialogflow/dialogflow_v2.dart';
 
 FirebaseUser loggedInUser;
-String name = 'John Smith';
 final _firestore = Firestore.instance;
 final _auth = FirebaseAuth.instance;
 
@@ -93,7 +92,7 @@ class myChatBotStateDoctor extends State<myChatBotScreenDoctor> {
   void Response(query) async {
     _textController.clear();
     AuthGoogle authGoogle =
-    await AuthGoogle(fileJson: "assets/apolloai_patient.json")
+    await AuthGoogle(fileJson: "assets/apolloai-doctor.json")
         .build();
     Dialogflow dialogflow =
     Dialogflow(authGoogle: authGoogle, language: Language.english);
@@ -107,7 +106,6 @@ class myChatBotStateDoctor extends State<myChatBotScreenDoctor> {
     setState(() {
       _messages.insert(0, message);
     });
-
   }
 
   void _handleSubmitted(String text) {

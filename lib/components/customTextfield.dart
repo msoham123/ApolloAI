@@ -24,7 +24,6 @@ class CustomTextField extends StatelessWidget {
           labelStyle: TextStyle(color: Color(0xFFF234253),fontWeight: FontWeight.bold),
           suffixIcon: icon
         ),
-        
     );
   }
 }

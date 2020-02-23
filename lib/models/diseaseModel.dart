@@ -11,12 +11,21 @@ class Disease {
     this.treatment = treatment;
     this.type = type;
     this.symptoms = symptoms;
-    this.diseaseImage = diseaseImage;;
+    this.diseaseImage = diseaseImage;
   }
 }
 
 class DiseaseBase{
   static var diseaseList = [
+    Disease(
+      "Pneumonia",
+      "Pneumonia is an infection that inflames the air sacs in one or both lungs. The air sacs may fill with fluid or pus (purulent material), causing cough with phlegm or pus, fever, chills, and difficulty breathing. A variety of organisms, including bacteria, viruses and fungi, can cause pneumonia.",
+      "https://www.mayoclinic.org/diseases-conditions/pneumonia/symptoms-causes/syc-20354204?page=0&citems=10",
+      "Get vaccinated. Vaccines are available to prevent some types of pneumonia and the flu. Talk with your doctor about getting these shots. The vaccination guidelines have changed over time so make sure to review your vaccination status with your doctor even if you recall previously receiving a pneumonia vaccine.",
+      "Multiple",
+      "Chest pain when you breathe or cough. Confusion or changes in mental awareness (in adults age 65 and older)",
+      Image.asset("assets/person1_virus_6.png",fit: BoxFit.fill),
+    ),
     Disease(
         "Malaria",
         "Malaria is a serious disease caused by a parasite. You get it when an infected mosquito bites you. There are four different types of malaria caused by four related parasites.",

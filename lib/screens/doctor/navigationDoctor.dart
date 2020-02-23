@@ -2,6 +2,7 @@ import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:login_dash_animation/screens/doctor/chatBotScreenDoctor.dart';
+import 'package:login_dash_animation/screens/doctor/diagnose.dart';
 import 'package:login_dash_animation/screens/mapScreen.dart';
 import 'package:login_dash_animation/screens/patient/chatBotScreen.dart';
 import 'package:login_dash_animation/screens/patient/homeScreen.dart';
@@ -16,10 +17,10 @@ import '../../main.dart';
 
 class NavScreenDoctor extends StatefulWidget {
   @override
-  _NavScreenState createState() => _NavScreenState();
+  _NavScreenDoctorState createState() => _NavScreenDoctorState();
 }
 
-class _NavScreenState extends State<NavScreenDoctor> {
+class _NavScreenDoctorState extends State<NavScreenDoctor> {
   PageController pageController;
   final _auth = FirebaseAuth.instance;
 
@@ -90,7 +91,7 @@ class _NavScreenState extends State<NavScreenDoctor> {
             MainScreen(),
             MapScreen(),
             myChatBotScreenDoctor(),
-            myChatBotScreen(),
+            ApolloAI()
           ],
         ),
       ),
